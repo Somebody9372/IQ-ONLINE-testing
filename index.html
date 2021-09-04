@@ -1,0 +1,140 @@
+<!-- Добрый день.Прошу простить меня за очень грубую верстку и множественные неточности.Дело в том,что большую часть времени и усилий я затратил на работу 
+с js и php,а верстку успевал делать в оставшееся время,поэтому такой результат.
+Использовать медиа-запросы и scss я не стал по той же причине,и по причине того
+что они небыли указанны в тз.В целом могу лучше. -->
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <title>IQ ONLINE - CALCULATOR</title>
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+            <header class="header">
+                <div class="header__top">
+                    <img class="header__logo" src="img/logo.png">
+                    <div class="header__contacts">
+                        <p class="header__number">8-800-100-5005</p>
+                        <p class="header__number">+7 (3452) 522-000</p>
+                    </div>
+                </div>
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Кредитные карты</a> </li>
+                        <li class="nav__item nav__item--active"><a href="#" class="nav__link">Вклады</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Дебетовая карта </a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Страхование</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Друзья</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Интернет-банк</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="main">
+
+                <section class="breadcrumbs">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__item">
+                            <a href="#" class="breadcrumbs__link">Главная</a>
+                        </li>
+                        <li class="breadcrumbs__item">
+                            <a href="#" class="breadcrumbs__link">Вклады</a>
+                        </li>
+                        <li class="breadcrumbs__item breadcrumbs__item--cuurent">Калькулятор</li>
+                    </ul>
+                </section>
+
+                <section class="calc">
+                    <div class="calc_wrapper calc_wrapper--left">
+                        <h1 class="calc__title">Калькулятор</h1>
+                        <form action="calc.php" method="POST" class="form">
+                            <div class="form__container">
+                                <div class="form__wrapper form__wrapper--label">
+                                    <label for="date">Дата оформления вклада </label>
+                                    <label for="amount">Сумма вклада</label>
+                                    <label for="select">Срок вклада</label>
+                                    <p class="form__text">Пополнение вклада </p>
+                                    <label for="replenishment-amount">Сумма пополения вклада</label>
+                                </div>
+
+
+                                <div class="form__wrapper form__wrapper--input">
+                                    <input id="date" type="text" name="date" class="form__input form__input--date">
+
+
+                                    <input id="amount" type="number" name="Deposit-amount" min="1000" max="3000000"
+                                        class="form__input form__input--amount">
+
+
+                                    <select id="select" class="form__input form__input--select">
+                                        <option value="1 year">1 год</option>
+                                        <option value="2 years">2 года</option>
+                                        <option value="3 years">3 года</option>
+                                        <option value="4 years">4 года</option>
+                                        <option value="5 years">5 лет</option>
+                                    </select>
+
+
+                                    <div class="form__radio">
+
+                                        <label id="radio-yes">Нет</label>
+
+                                        <input id="radio-no" type="radio" name="replenishment" value="No"
+                                            class="form__input form__input--radio">
+
+                                        <label id="radio-yes">Да</label>
+                                        <input id="radio-yes" type="radio" name="replenishment" value="Yes"
+                                            class="form__input form__input--radio">
+                                    </div>
+                                    <input id="replenishment-amount" type="number" name="replenishment-amount"
+                                        min="1000" max="3000000" value="0"
+                                        class="form__input form__input--replenishment-amount">
+                                </div>
+                            </div>
+
+                            <div class="form__wrapper form__wrapper--result">
+                                <button type="submit" class="form__button">Расчитать</button>
+                                <p class="form__result">Результат:<span class="form__output"></span></p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="calc_wrapper calc_wrapper--right">
+                        <input class="calc__range-input calc__range-input--amount" type="range" min="1000" max="3000000"
+                            value="0" step="1">
+                        <input class="calc__range-input calc__range-input--replenishment-amount" type="range" min="1000"
+                            max="3000000" value="10000" step="1">
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Кредитные карты</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Вклады</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Дебетовая карта</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Страхование</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Друзья</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Интернет-банк</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
